@@ -12,6 +12,7 @@ defmodule Plug.LoggerTest do
     plug :passthrough
 
     defp passthrough(conn, _) do
+      :timer.sleep 1_001
       Plug.Conn.send_resp(conn, 200, "Passthrough")
     end
   end
